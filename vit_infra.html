@@ -1,0 +1,858 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from velammalitech.edu.in/vit_infra.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 19 May 2018 09:32:28 GMT -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="scripts/Styles.html" />
+<link rel="stylesheet" type="text/css" href="css/sliderwall_thumbs_skin.css" />
+<link rel="stylesheet" type="text/css" href="css/slideshow_sample.css" />
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-10803136-42']);
+  _gaq.push(['_setDomainName', 'velammalitech.edu.in']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+  
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/sliderwall-thumbs-1.1.2.js"></script>
+
+
+<script type="text/javascript">
+var mySlider;	// A reference to the SliderWall instance.
+var err;
+// Initialize the slider.
+$(document).ready(function() {
+	try {
+		// imageSlideshow is the id of the <div> tag that will contain the SliderWall instance.
+		$("#imageSlideshow").sliderWallThumbs({
+			// general options
+			cssClassSuffix: "",
+			domainKeys: "",
+			imageAlign: "middleCenter", /* topLeft, topCenter, topRight, middleLeft, middleCenter (default), middleRight, bottomLeft, bottomCenter, bottomRight */
+			imageScaleMode: "scaleCrop", /* scale, scaleCrop (default), crop, stretch */
+			loopContent: true,
+			rssFeed: null,
+			selectableContent: true,
+			
+			// slideshow options
+			autoSlideShow: true,
+			slideShowSpeed: 6,
+			
+			// timer control options
+			showTimer: true,
+			timerPosition: "belowControlBar", /* aboveControlBar, belowControlBar (default) */
+			
+			// control bar options
+			autoHideControlBar: true,
+			controlsHideDelay: 5,
+			controlsShowHideSpeed: 0.2,
+			showControlBar: true,
+			
+			// navigation options
+			autoHideNavButtons: true,
+			showNavigationButtons: true,
+			
+			// text options
+			autoHideText: true,
+			
+			// interaction options
+			useGestures: true,
+			useKeyboard: true,
+			useMouseScroll: true,
+			pauseOnMouseOver: false,
+			disableAutohideOnMouseOver: false,
+			
+			// transitions
+			transitionType: {
+				optimizeForIpad: false,  /* If set to true, it would use only the Alpha and Slide effects. */
+				random: false,
+				transitions: [
+					/*
+					Possible transitions: Alpha, AlphaBars, BrightSquares, Disc, FlipBars, Iris, LensGlare, None, Slide, SquareFade, SquareLight, Stripes, Waves, WaveScale, Wavy
+					Possible tween types: Back, Bounce, Circ, Cubic, Elastic, Expo (default), Quad, Quart, Quint, Sine
+					Possible easing types: easeIn, easeOut, easeInOut
+					*/
+					{
+						name: "Alpha",
+						duration: 0.75,
+						tweenType: "Expo",
+						easing: "easeInOut"
+					}, 
+					{
+						name: "AlphaBars",
+						duration: 1,
+						tweenType: "Expo",
+						easing: "easeOut",
+						direction: "l2r",
+						random: false,
+						barWidth: 50
+					}, 
+					{
+						name: "BrightSquares",
+						duration: 1,
+						tweenType: "Expo",
+						easing: "easeOut",
+						direction: "tl2br",
+						random: false,
+						tileWidth: 100,
+						tileHeight: 100
+					}, 
+					{
+						name: "Disc",
+						duration: 1,
+						tweenType: "Expo",
+						easing: "easeInOut"
+					}, 
+					{
+						name: "FlipBars",
+						duration: 1,
+						tweenType: "Expo",
+						easing: "easeOut",
+						direction: "l2r",
+						random: false,
+						barWidth: 80
+					}, 
+					{
+						name: "Iris",
+						duration: 1,
+						tweenType: "Expo",
+						easing: "easeInOut"
+					}, 
+					{
+						name: "LensGlare",
+						duration: 1,
+						tweenType: "Expo",
+						easing: "easeOut",
+						gradientWidth: 100,
+						margins: 20,
+						lightOffset: 0,
+						lightDirection: false
+					}, 
+					/*
+					{
+					name: "None" //This is the setting if you don't want to apply any transition effects.
+					},
+					*/
+					{
+						name: "Slide",
+						duration: 0.75,
+						tweenType: "Expo",
+						easing: "easeInOut",
+						direction: "horizontal"
+					}, 
+					{
+						name: "SquareFade",
+						duration: 1.5,
+						tweenType: "Expo",
+						easing: "easeOut",
+						direction: "tl2br",
+						random: false,
+						tileWidth: 100,
+						tileHeight: 100
+					}, 
+					{
+						name: "SquareLight",
+						duration: 1,
+						tweenType: "Expo",
+						easing: "easeOut",
+						direction: "tl2br",
+						random: false,
+						tileWidth: 100,
+						tileHeight: 100
+					}, 
+					{
+						name: "Stripes",
+						duration: 1.5,
+						tweenType: "Expo",
+						easing: "easeInOut",
+						direction: "l2r",
+						random: false,
+						barWidth: 50
+					}, 
+					{
+						name: "Waves",
+						duration: 1,
+						tweenType: "Expo",
+						easing: "easeIn",
+						direction: "l2r",
+						random: false,
+						barWidth: 60
+					}, 
+					{
+						name: "WaveScale",
+						duration: 1.5,
+						tweenType: "Expo",
+						easing: "easeOut",
+						maxWidth: 100
+					}, 
+					{
+						name: "Wavy",
+						duration: 1,
+						tweenType: "Expo",
+						easing: "easeOut",
+						direction: "l2r",
+						random: false,
+						barWidth: 60
+					}
+				]
+			},
+			
+			// callback functions
+			init: null,
+			contentLoadStart: null,
+			contentLoadComplete: null,
+			contentLoadError: null,
+			contentShow: null,
+			contentHide: null,
+			slideClick: null,
+			slideshowStart: null,
+			slideshowStop: null,
+			pageChange: null
+		});
+		
+		// This is how you get a reference to the SliderWall object to call 
+		// SliderWall methods (mySlider.next(), mySlider.getSelectedIndex()).
+		mySlider = $("#imageSlideshow").data("sliderWall");
+		
+	} catch(err) { /* handle any error messages */ }
+});
+</script>
+
+
+
+<!-- google analytics is below -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-1965499-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+
+<meta http-equiv="content-language" content="en-us" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="robots" content="INDEX,FOLLOW" />
+<meta name="revisit-after" content="" />
+<meta name="author" content="" />
+<meta name="reply-to" content="" />
+<meta name="distribution" content="global" />
+<meta name="copyright" content="" />
+<title>Velammal Institute of Technology</title>
+<link rel="stylesheet" href="js/innerslideshow/screen.css" type="text/css" media="screen" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+
+</head>
+
+<body>
+	<div id="outer-wrapper">
+	<div class="wrapper">
+    	<div id="top">
+    	<div id="header">
+            
+            <div id="logo1"> <a href="index.html" title="Velammal Institute of Technology (Velammal ITech)" style=" border:0px; display:block; width:400px;   border:0px;  height:70px; margin:20px 0 0 40px;"> </a>
+            <div id="search1" style=" background:url(images/search-left.jpg) left no-repeat;">
+              <div  align="left" style=" margin:0px;" >
+                <form action="http://velammalitech.edu.in/search.html" id="cse-search-box">
+                  <div style="float:left">
+                    <input type="hidden" name="cx" value="013132051917571692441:fzwgaa9md-a" />
+                    <input type="hidden" name="cof" value="FORID:10" />
+                    <input type="hidden" name="ie" value="UTF-8" />
+                    <input type="text"   style="border:0px #7e9db9 solid; width:150px; "   name="q" size="25" />
+                    <input name="sa" type="image" value="Search" src="images/search-right.jpg" title="Search" style="vertical-align:middle;" align="middle" />
+                  </div>
+                  <div style="float:left;COLOR:#FFF;padding-top:5px;padding-left:10px">
+                  	<strong><span style="color:#ECAD00">CODE:</span> <blink>1237</blink></strong>
+                  </div>
+                </form>
+                <script type="text/javascript" language="javascript" src="JS/Google_CSE.js" > </script> 
+              </div>
+            </div>
+            </div>
+           <div id="flashnews"> 
+            <div class="flashinner">
+          <marquee behavior="scroll">
+           <!--<a href="pdf/EKALAIVA_2k13.pdf" target="_blank"> <span class="flashnews">   EKALAIVA 2K13 - one day National Level Technical Symposium on Oct 5th 2013 Organized By Department of Mechanical Engineering  </span> <img src="images/blinknew.gif" width="34" border="0" height="12" />  </a> &nbsp; &nbsp;  <a href="#">  <span class="flashnews"> Only Few Seats available in MBA </span> <img src="images/blinknew.gif" width="34" border="0" height="12" /></a>   &nbsp; &nbsp; --><!--<a href="pdf/affiliranks2012.pdf" target="_blank" class="rankLink">Rank holders</a>--></marquee>
+          </div>
+           </div>
+            
+            <div id="achievements">
+<!--
+            <ul> 
+          <li> Passed out 2008-12 batch results : 97.2%</li>
+<li>Passed out 2008 – 12 Placement %: 92.13%</li>
+<li>MBA – 100% results & Placement since inception</li>
+<li>I sem University  Results January 2013 : 90.05%</li>
+		</ul>
+-->
+       <a href="Rankholders2012-2016.html"  class="rankLink">Rank Holders - 2016 Batch<img src="images/blinknew.gif" width="34" border="0" height="12" /> </a>
+            </div>
+          </div>
+        
+        <div id="menu">
+            <div id="menu-left"> </div>
+            <div id="menu-mid">
+              <ul>
+                <li><a href="index-2.html" ><span>Home</span></a></li> <li class='has-sub '><a href="Aboutus.html"><span>About Us</span></a>
+                 <ul>
+                     <li><a href="Aboutus.html"><span>Overview</span></a></li>
+                    <li><a href="college_trust.html"><span>The Trust</span></a></li>
+                    <li><a href="college_management.html"><span>Management Team</span></a></li>
+                    <li><a href="college_acc.html"><span>Accreditations &amp; Affiliations</span></a></li>
+                    <li><a href="college_vision.html"><span>Vision &amp; Mission</span></a></li>
+                    <li><a href="college_quality.html"><span>Quality Policy</span></a></li>
+                  </ul>
+                
+                <li class='has-sub '><a href="acadamics_course.html"><span>Courses</span></a>
+                 <li class='has-sub '><a href="acadamics_admission.html" ><span>Admission</span></a>
+                 
+                </li>
+                <li class='has-sub '><a href="acadamics_overview.html"><span>Academics</span></a>
+                  <ul>
+                    <li><a href="acadamics_overview.html"><span>Overview</span></a></li>
+                    <li><a href="acadamics_eligibility.html"><span>Eligibility</span></a></li>
+                  </ul>
+                </li>
+                <li class='has-sub '><a href="vit_infra.html" class="active"><span>Campus Life</span></a>
+                  <ul>
+                        	<li><a href="vit_infra.html"><span>Infrastructure</span></a></li>
+                             <li><a href="eventgallery.html"><span>Gallery</span></a></li>
+                            <li><a href="vit_library.html"><span>Library Service</span></a></li>
+                            <li><a href="pdf/bus_route_2017.pdf" target="_blank"><span>Transport Service</span></a></li>
+                            <li><a href="vit_foodcourt.html"><span>Food Court</span></a></li>
+                            <li><a href="vit_hostel.html"><span>Hostel</span></a></li>
+                            <li><a href="vit_healthcenter.html"><span>Health Centre</span></a></li>
+                        </ul>
+                </li><li class='has-sub'><a href="#"><span>IQAC</span></a>
+                  <ul>
+                    <li><a href="IQAC-Composition.html"><span>IQAC - Composition</span></a></li>
+                    <li><a href="IQAC-Constitution.html"><span>IQAC - Constitution Members</span></a></li>
+                  </ul>
+                  </li>
+                   <li class='has-sub'><a href="#"><span>R & D</span></a>
+                  <ul>
+                    <li><a href="R%26D_Dst-Inspire.html"><span>Inspire Internship Camp 2015</span></a></li>
+<li><a href="R%26D_Bigdata-analytics.html"><span>Big data Analytics</span></a></li>
+                  </ul>
+                  </li>
+                <li class='has-sub '><a href="stu_activities.html"><span>Co-Curricular</span></a>
+                  <ul>
+                    <li><a href="ProfessionalSociety.html"><span>Professional Society</span></a></li>
+                        <li><a href="club.html"><span>Clubs</span></a></li>
+                  
+                     <!--<li><a href="NSS.html"><span>NSS</span></a></li> 
+                    <li><a href="NCC.html"><span>NCC</span></a></li>--><li><a href="BloodDonationCamp.html"><span>YRC</span></a></li>
+                    <li><a href="Sports.html"><span>SPORTS</span></a></li>
+                  </ul>
+                </li>
+                <li class='has-sub '><a href="#"><span><b>NIRF</span></a>
+				<ul>
+                    <li><a href="pdf/NDRF/Earning-from-Patents.pdf"><span>Earning from Patents</span></a></li>
+                    <li><a href="pdf/NDRF/Financial-Resources.pdf"><span>Financial Resources</span></a></li>
+                    <li><a href="pdf/NDRF/PCS-facilities.pdf"><span>PCS facilities</span></a></li>
+                    <li><a href="pdf/NDRF/Ph.D.Student-Details.pdf"><span>Ph.D.Student Details</span></a></li>
+                    <li><a href="pdf/NDRF/Placement%26Higher-Studies.pdf"><span>Placement & Higher Studies</span></a></li>  
+					<li><a href="pdf/NDRF/Total-Actual-Student-Strength.pdf"><span>Total Actual Student Strength</span></a></li>
+                  </ul>
+				</li>
+              <!--  <li><a href="http://velammalit.almaconnect.com" target="_blank"><span>Alumni</span></a></li>-->
+                <li class='has-sub '><a href="plac_why.html"><span>Placement</span></a>
+                  <ul>
+                    <li><a href="plac_why.html"><span>Why Velammal ITech?</span></a></li>
+                    <li><a href="plac_facilities.html"><span>Facilities</span></a></li>
+                    <li><a href="plac_cardev.html"><span>Career Development</span></a></li>
+                    <li><a href="Plac_summary.html"><span>Placement Summary</span></a></li>
+                    <li><a href="OurRecruiters.html"><span>Our Recruiters</span></a></li>                    
+                  </ul>
+                </li>
+                <li class='has-sub '><a href="contact.html"><span>Contact</span></a>
+                   <ul>
+                    <li><a href="contact.html"><span>Location</span></a></li>  <li><a href="http://www.velammalitech.edu.in/enquiry.aspx"><span>Enquiry Form</span></a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div id="menu-right"> </div>
+          </div>
+        
+        </div>
+        <div class="clear"></div>
+        <div id="BrudcrumsBar" class="Brudcrums"><a href="index-2.html">Home</a> » Campus Life » Infrastructure</div><!-- End if id="BrudcrumsBar" -->
+          <div class="clear"></div>      
+        <div id="content">
+        	<div id="content-top">
+            </div>
+            <div id="content-mid">
+            	<div class="content-left">
+                	<div id="heading">
+                        <div id="heading-left">
+                        </div>
+                        <div class="heading-mid">
+                        	<h1>Infrastructure:</h1>
+                        </div>
+                        <div id="heading-right">
+                        </div>
+                    </div>
+                    <div id="content-block"><br />
+                  
+
+  
+  <div>
+      
+    <span class="BdyTxtIn"><strong>Velammal Institute of Technology is spread over 10.5 acres and has an integrated campus. The campus comprises of</strong> </span>
+    
+    
+  </div>
+ 
+  <div >
+  
+  <table width="100%">
+  <tr>
+    <td><table width="100%" border="0" cellpadding="5" cellspacing="1">
+  <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+  <tr height="30px">
+    <td width="2%"><img src="images/arrow-2.jpg" alt="" width="6" height="8" border="0" /></td>
+    <td width="98%"><b>Lecture halls</b></td>
+  </tr>
+  <tr height="30px">
+    <td><img src="images/arrow-2.jpg" alt="" width="6" height="8" border="0" /></td>
+    <td><b>Tutorial halls</b></td>
+  </tr>
+  <tr height="30px">
+    <td><img src="images/arrow-2.jpg" alt="" width="6" height="8" border="0" /></td>
+    <td><b>Drawing hall</b></td>
+  </tr>
+  <tr height="30px">
+    <td><img src="images/arrow-2.jpg" alt="" width="6" height="8" border="0" /></td>
+    <td><b>Computer laboratory</b></td>
+  </tr>
+  <tr height="30px">
+    <td><img src="images/arrow-2.jpg" alt="" width="6" height="8" border="0" /></td>
+    <td><b>Communication laboratory</b></td>
+  </tr>
+  <tr height="30px">
+    <td><img src="images/arrow-2.jpg" alt="" width="6" height="8" border="0" /></td>
+    <td><b>Physics laboratory</b></td>
+  </tr>
+  <tr height="30px">
+    <td><img src="images/arrow-2.jpg" alt="" width="6" height="8" border="0" /></td>
+    <td><b>Chemistry laboratory</b></td>
+  </tr>
+  <tr height="30px">
+    <td><img src="images/arrow-2.jpg" alt="" width="6" height="8" border="0" /></td>
+    <td><b>Engineering Practices laboratory</b></td>
+  </tr>
+  <tr height="30px">
+    <td><img src="images/arrow-2.jpg" alt="" width="6" height="8" border="0" /></td>
+    <td><b>Library</b></td>
+  </tr>
+  <tr height="30px">
+    <td><img src="images/arrow-2.jpg" alt="" width="6" height="8" border="0" /></td>
+    <td><b>Conference hall</b></td>
+  </tr>
+  <tr height="30px">
+    <td><img src="images/arrow-2.jpg" alt="" width="6" height="8" border="0" /></td>
+    <td><b>Workshop</b></td>
+  </tr>
+  <tr  height="30px">
+    <td><img src="images/arrow-2.jpg" alt="" width="6" height="8" border="0" /></td>
+    <td><b>Hostel</b></td>
+  </tr>
+  <tr height="30px">
+    <td><img src="images/arrow-2.jpg" alt="" width="6" height="8" border="0" /></td>
+    <td><b>Canteen</b></td>
+  </tr>
+  <tr>
+  <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+      <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+      
+      
+    
+  
+</table></td>
+  </tr>
+  <tr>
+    <td>
+    
+    
+    
+    </td>
+  </tr>
+</table>
+
+</div> 
+  
+ 
+</div>
+					
+                    <!--<div id="chairman-block">
+                    	<div id="chairman">
+                        	<h1>Chairman's Message</h1>
+                            <img src="images/chairman.jpg" alt="" />
+                            <p>It is indeed a privilege in addressing you. Yet another year has passed and we have crossed some more milestones. At every step we had the support and motivation provided by the confident parents.</p>
+                            <span>More</span>
+                        </div>
+                        <div id="quicklinks">
+                        	<div id="quick-top">
+                            </div>
+                            <div id="quick-mid">
+                            	<div class="links">
+                                	<img src="images/link-1.jpg" alt="" />
+                                    <a href="pdf/MandatoryDisclosure2011-2012.pdf" target="_blank">Mandatory Disclosure</a>
+                                </div>
+                                
+                                <div class="links">
+                                	<img src="images/link-2.jpg" alt="" />
+                                    <a href="#">Prospectus</a>
+                                </div>
+                                
+                                <div class="links">
+                                	<img src="images/link-3.jpg" alt="" />
+                                    <a href="#">Academic Calendar</a>
+                                </div>
+                                
+                                <div class="links">
+                                	<img src="images/link-4.jpg" alt="" />
+                                    <a href="#">Student Guide</a>
+                                </div>
+                            </div>
+                            <div id="quick-bototm">
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+                
+                
+                <div class="content-right">
+                	<div class="right-top">
+                    </div>
+                    <div class="right-mid">
+                    	<h1>Campus Life</h1> <a href="vit_infra.html"><span>Infrastructure</span></a>
+                        <a href="vit_library.html"><span>Library Service</span></a>
+						<a href="TransportService.html"><span>Transport Service</span></a>                        
+                        <a href="vit_audi.html"><span>Auditorium</span></a>
+                        <a href="vit_foodcourt.html"><span>Food Court</span></a>
+                        <a href="vit_hostel.html"><span>Hostel</span></a>
+                        <a href="vit_healthcenter.html"><span>Health Centre</span></a>
+                        <img src="images/overview-image.jpg" alt="" border="0" />
+                    </div>
+                    <div class="right-bottom">
+                    </div>
+                </div>
+                
+              
+              
+              
+              
+              <table width="100%">
+     
+  <tr>
+    <td>
+   
+   <table>
+   
+ <tr>
+    <td colspan="2"><strong>AMENITIES</strong></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+  <tr height="30px">
+    <td><img src="images/arrow-2.jpg" alt="" width="6" height="8" border="0" /></td>
+    <td class="paddingleft"><b>Indoor games</b></td>
+  </tr>
+  <tr height="30px">
+    <td><img src="images/arrow-2.jpg" alt="" width="6" height="8" border="0" /></td>
+    <td class="paddingleft"><b>Basket ball, foot ball ground</b></td>
+  </tr>
+  <tr height="30px">
+    <td><img src="images/arrow-2.jpg" alt="" width="6" height="8" border="0" /></td>
+    <td class="paddingleft"><b>PCO/ STD booth</b></td>
+  </tr>
+  <tr height="30px">
+    <td><img src="images/arrow-2.jpg" alt="" width="6" height="8" border="0" /></td>
+    <td class="paddingleft"><b>Mineral water plant</b></td>
+  </tr>
+  <tr height="30px">
+    <td><img src="images/arrow-2.jpg" alt="" width="6" height="8" border="0" /></td>
+    <td class="paddingleft"><b>Two and Four wheeler parking</b></td>
+  </tr>
+  <tr height="30px">
+    <td valign="top"><img src="images/arrow-2.jpg" alt="" width="6" height="8" border="0" /></td>
+    <td class="paddingleft"><b>Power backup (Generator 350 KV)</b></td>
+  </tr>
+  <tr height="30px">
+    <td><img src="images/arrow-2.jpg" alt="" width="6" height="8" border="0" /></td>
+    <td class="paddingleft"><b>Rest room</b></td>
+  </tr>
+  <tr height="30px">
+    <td><img src="images/arrow-2.jpg" alt="" width="6" height="8" border="0" /></td>
+    <td class="paddingleft"><b>Common room</b></td>
+  </tr>
+  <tr height="30px">
+    <td><img src="images/arrow-2.jpg" alt="" width="6" height="8" border="0" /></td>
+    <td class="paddingleft"><b>Open air theatre</b></td>
+  </tr>
+  <tr height="30px">
+    <td><img src="images/arrow-2.jpg" alt="" width="6" height="8" border="0" /></td>
+    <td class="paddingleft"><b>Reprography</b></td>
+  </tr>
+  <tr height="30px">
+    <td><img src="images/arrow-2.jpg" alt="" width="6" height="8" border="0" /></td>
+    <td class="paddingleft"><b>Canteen</b></td>
+  </tr>
+  <tr height="30px">
+    <td><img src="images/arrow-2.jpg" alt="" width="6" height="8" border="0" /></td>
+    <td class="paddingleft"><b>Transport</b> </td>
+  </tr>
+    </table> 
+    
+    </td>
+    <td>
+    <table>
+  <tr>
+    <td class="paddingleft15">
+    
+  <div id="main">
+	<!--	<h1>Image slideshow example</h1>
+		<p>This is a sample image slideshow using SliderWall. The transition effects are selected randomly from the list of possible effects.</p>
+		<p><strong>Note:</strong> this example requires HTML5 compatible browsers.</p>-->
+		<div id="imageSlideshow"> <!-- The slider will be placed within this <div> tag. -->
+			<div rel="slider_content" style="display: none;"> <!-- Define the structure and content for the slider. -->
+				<div rel="slide"> <!-- The structure for a slide. -->
+					<div rel="type">image</div> <!-- The type of a slide can be image, object (for swf files) and html. -->
+					<div rel="title"></div> <!-- The title of the slide. -->
+					<div rel="description"></div> <!-- The description of the slide. -->
+					<div rel="content">Infrastructureimages/01.jpg</div> <!-- The content of the slide: the URL of an image (if type is image), the URL of SWF file (if type is object) or HTML content (if type is html). -->
+					<div rel="thumbnail">thumbnails/01.jpg</div> <!-- The URL to a thumbnail image. -->
+					<div rel="target_url"></div> <!-- The URL of a target web page that is displayed in a new tab when the user clicks on the slide. -->
+					<div rel="target_window">_blank</div> <!-- The target window where the URL will be opened. Possible values are _blank, _parent, _self, _top and frame_name. -->
+				</div>
+				<div rel="slide">
+					<div rel="type">image</div>
+					<div rel="title"></div>
+					<div rel="description"></div>
+					<div rel="content">Infrastructureimages/02.jpg</div>
+					<div rel="thumbnail">thumbnails/02.jpg</div>
+					<div rel="target_url"></div>
+					<div rel="target_window">_blank</div>
+				</div>
+				<div rel="slide">
+					<div rel="type">image</div>
+					<div rel="title"></div>
+					<div rel="description"></div>
+					<div rel="content">Infrastructureimages/03.jpg</div>
+					<div rel="thumbnail">thumbnails/03.jpg</div>
+					<div rel="target_url"></div>
+					<div rel="target_window">_blank</div>
+				</div>
+				<div rel="slide">
+					<div rel="type">image</div>
+					<div rel="title"></div>
+					<div rel="description"></div>
+					<div rel="content">Infrastructureimages/04.jpg</div>
+					<div rel="thumbnail">thumbnails/04.jpg</div>
+					<div rel="target_url"></div>
+					<div rel="target_window">_blank</div>
+				</div>
+				<div rel="slide">
+					<div rel="type">image</div>
+					<div rel="title"></div>
+					<div rel="description"></div>
+					<div rel="content">Infrastructureimages/05.jpg</div>
+					<div rel="thumbnail">thumbnails/05.jpg</div>
+					<div rel="target_url"></div>
+					<div rel="target_window">_blank</div>
+				</div>
+				<div rel="slide">
+					<div rel="type">image</div>
+					<div rel="title">Canteen</div>
+					<div rel="description"></div>
+					<div rel="content">Infrastructureimages/06.jpg</div>
+					<div rel="thumbnail">thumbnails/06.jpg</div>
+					<div rel="target_url"></div>
+					<div rel="target_window">_blank</div>
+				</div>
+				<div rel="slide">
+					<div rel="type">image</div>
+					<div rel="title">Chemistry laboratory</div>
+					<div rel="description"></div>
+					<div rel="content">Infrastructureimages/07.jpg</div>
+					<div rel="thumbnail">thumbnails/07.jpg</div>
+					<div rel="target_url"></div>
+					<div rel="target_window">_blank</div>
+				</div>
+				<div rel="slide">
+					<div rel="type">image</div>
+					<div rel="title">Computer laboratory</div>
+					<div rel="description"></div>
+					<div rel="content">Infrastructureimages/08.jpg</div>
+					<div rel="thumbnail">thumbnails/08.jpg</div>
+					<div rel="target_url"></div>
+					<div rel="target_window">_blank</div>
+				</div>
+				<div rel="slide">
+					<div rel="type">image</div>
+					<div rel="title">Computer laboratory</div>
+					<div rel="description"></div>
+					<div rel="content">Infrastructureimages/09.jpg</div>
+					<div rel="thumbnail">thumbnails/09.jpg</div>
+					<div rel="target_url">http://www.somesite.com</div>
+					<div rel="target_window">_blank</div>
+				</div>
+				<div rel="slide">
+					<div rel="type">image</div>
+					<div rel="title">Machine Laboratory</div>
+					<div rel="description"></div>
+					<div rel="content">Infrastructureimages/10.jpg</div>
+					<div rel="thumbnail">thumbnails/10.jpg</div>
+					<div rel="target_url">http://www.somesite.com</div>
+					<div rel="target_window">_blank</div>
+				</div>
+				<div rel="slide">
+					<div rel="type">image</div>
+					<div rel="title">Physics laboratory</div>
+					<div rel="description"></div>
+					<div rel="content">Infrastructureimages/11.jpg</div>
+					<div rel="thumbnail">thumbnails/11.jpg</div>
+					<div rel="target_url">http://www.somesite.com</div>
+					<div rel="target_window">_blank</div>
+				</div>
+				<div rel="slide">
+					<div rel="type">image</div>
+					<div rel="title">Workshop</div>
+					<div rel="description"></div>
+					<div rel="content">Infrastructureimages/12.jpg</div>
+					<div rel="thumbnail">thumbnails/12.jpg</div>
+					<div rel="target_url"></div>
+					<div rel="target_window">_blank</div>
+				</div>
+				<div rel="slide">
+					<div rel="type">image</div>
+					<div rel="title">Lecture halls</div>
+					<div rel="description"></div>
+					<div rel="content">Infrastructureimages/13.jpg</div>
+					<div rel="thumbnail">thumbnails/13.jpg</div>
+					<div rel="target_url"></div>
+					<div rel="target_window">_blank</div>
+				</div>
+				<div rel="slide">
+					<div rel="type">image</div>
+					<div rel="title"> Library</div>
+					<div rel="description"></div>
+					<div rel="content">Infrastructureimages/14.jpg</div>
+					<div rel="thumbnail">thumbnails/14.jpg</div>
+					<div rel="target_url">http://www.somesite.com</div>
+					<div rel="target_window">_blank</div>
+				</div>
+				<div rel="slide">
+					<div rel="type">image</div>
+					<div rel="title">Library</div>
+					<div rel="description"></div>
+					<div rel="content">Infrastructureimages/15.jpg</div>
+					<div rel="thumbnail">thumbnails/15.jpg</div>
+					<div rel="target_url"></div>
+					<div rel="target_window">_blank</div>
+				</div>
+				<div rel="slide">
+					<div rel="type">image</div>
+					<div rel="title">Library</div>
+					<div rel="description"></div>
+					<div rel="content">Infrastructureimages/16.jpg</div>
+					<div rel="thumbnail">thumbnails/16.jpg</div>
+					<div rel="target_url"></div>
+					<div rel="target_window">_blank</div>
+				</div>
+				
+			</div>
+		</div> <!-- end SliderWall definition and structure -->
+		
+		<!--<p>For more information on the SliderWall templates please visit the <a href="http://www.sliderwall.com/how-to-use/" target="_blank">How to use</a> section of the site.</p>-->
+		
+	</div>
+    
+    </td>
+  </tr>
+</table>
+
+    </td>
+  </tr>
+</table> 
+               
+               
+               
+               
+               
+               
+               
+               
+                
+            </div>
+            
+            
+            
+           <div id="content-bottom">
+          
+          
+            <p>&copy; 2017 Velammal Institute of Technology  |  All right reserved  |  Privacy policy</p>
+            <div id="footer-logo"> <a href="http://www.itechind.com/" title="iTech India Private Limited" target="_blank"><img src="images/footer-logo.jpg" alt="iTech India Private Limited" width="65" height="26" border="0" /></a> </div>
+
+            <div class="fb-logo"><a href="https://www.facebook.com/VelammalITech/" target="_blank"><img src="images/facebook-16.png" title="Facebook"></a>
+           <a href="https://twitter.com/VelammalITech"><img src="images/twitter.png" title="twitter" class="twit" t></a></div>
+
+              <!-- Start of SimpleHitCounter Code -->
+<div style="background:#f0f0f0; color:#000;"  align="right"> Page visit: <a href="#"  >    <img style=" color:#000;  background:#f0f0f0;"  src="http://simplehitcounter.com/hit.php?uid=1508499&amp;f=0&amp;b=16777215"  border="0" height="18" width="83" alt="web counter"></a><br></div>
+<!-- End of SimpleHitCounter Code --> 
+           
+           
+        </div>
+        
+    </div>
+    </div>
+    
+
+
+<!-- Google Code for Remarketing tag -->
+<!-- Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. For instructions on adding this tag and more information on the above requirements, read the setup guide: google.com/ads/remarketingsetup -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 990638878;
+var google_conversion_label = "sE_SCJqwqQQQnuav2AM";
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="../www.googleadservices.com/pagead/f.txt">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="http://googleads.g.doubleclick.net/pagead/viewthroughconversion/990638878/?value=0&amp;label=sE_SCJqwqQQQnuav2AM&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
+</body>
+
+<!-- Mirrored from velammalitech.edu.in/vit_infra.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 19 May 2018 09:32:36 GMT -->
+</html>
