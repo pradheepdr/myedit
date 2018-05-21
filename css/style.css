@@ -212,15 +212,15 @@ input[type=text] {
 
 #outer-wrapper {
 	margin: 0 auto;
-	width: 1000px;
+	max-width: 1000px;
 }
 
 #wrapper,
 .wrapper {
 	margin: 0 auto;
 	padding: 0;
-	width: 1000px;
-	background: url(../images/wrapper-bg.jpg) repeat-x left top;
+	max-width: 1000px;
+	background: grey;<*url(../images/wrapper-bg.jpg) repeat-x left top;*>
 	height: auto;
 	float: left;
 }
@@ -1875,7 +1875,7 @@ input[type=text] {
 
 #outer-wrapper {
 	margin: 0 auto;
-	width: 1000px;
+	max-width: 1000px;
 }
 
 #wrapper,
@@ -1883,7 +1883,7 @@ input[type=text] {
 	margin: 0 auto;
 	padding: 0;
 	width: 1000px;
-	background: url(../images/wrapper-bg.jpg) repeat-x left top;
+	background: grey url(../images/wrapper-bg.jpg) repeat-x left top;
 	height: auto;
 	float: left;
 }
