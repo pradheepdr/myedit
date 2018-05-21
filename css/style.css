@@ -198,9 +198,6 @@ input[type=text] {
 	float: left;
 }
 
-.wrapper {
-	height: 170px;
-}
 
 #top {
 	background: url(../images/wrapper-bg-bottom.jpg) bottom center no-repeat;
