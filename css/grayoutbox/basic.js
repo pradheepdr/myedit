@@ -8,9 +8,10 @@
  *   http://www.opensource.org/licenses/mit-license.php
  */
 
-jQuery(function ($) {
-	
-	$('#basic-modal-content').modal( {
+(function ($) {
+	var clearTimeout
+    var setTimeout
+	$('#basic-modal-content').modal({
     overlayClose: true,
     onShow: function() {
         var timer;
