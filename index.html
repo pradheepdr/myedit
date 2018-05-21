@@ -34,7 +34,59 @@
                 padding-top: 10px !Important;
             }
         </style>
+       <script>
+            $(function(){
+                $('#slides').slides({
+                    preload: true,
+                    preloadImage: 'img/loading.gif',
+                    play: 4000,
+                    pause: 2500,
+                    hoverPause: true,
+                    animationStart: function(current){
+                        $('.caption').animate({
+                            bottom:-35
+                        },100);
+                        if (window.console && console.log) {
+                            // example return of current slide number
+                            console.log('animationStart on slide: ', current);
+                        };
+                    },
+                    animationComplete: function(current){
+                        $('.caption').animate({
+                            bottom:0
+                        },200);
+                        if (window.console && console.log) {
+                            // example return of current slide number
+                            console.log('animationComplete on slide: ', current);
+                        };
+                    },
+                    slidesLoaded: function() {
+                        $('.caption').animate({
+                            bottom:0
+                        },200);
+                    }
+                });
+                $('#slideshowHolder').jqFancyTransitions({ 
+                    width: 179, 
+                    height: 180 
+                });
+            });
 
+
+        </script>
+
+        <script>
+            $(function() {
+                $('marquee').mouseover(function() {
+                    $(this).attr('scrollamount',0);
+                }).mouseout(function() {
+                    $(this).attr('scrollamount',3);
+                });
+
+            });
+
+
+        </script>
     </head>
 
     <body>
@@ -332,6 +384,9 @@ preload the images
 
 
             </div>
+                
+                <nbsp;>
+                    </nbsp;>
                 <div id="slider">
                     <div id="slider-left">
                         <div id="container">
@@ -402,8 +457,8 @@ preload the images
                         </div>
                     </div> 
                     </div>
-                    <div id="slider-right">
-                        <h2>Campus News :</h2>
+                    <div id="slider-right" >
+                        <h2><strong> Campus News :</strong></h2>
                         <marquee direction="up" height="245" onmouseout="this.start();" onmouseover="this.stop();" scrollamount="2" scrolldelay="150"><br />		
                             <a href="pdf/News/VIT-Hand-Book2017.pdf" target="_blank"><strong>Hand Book 2017 - 2018</strong>&nbsp;&nbsp;<img src="images/blinknew.gif" width="34" height="14" /></a>
 
@@ -455,59 +510,7 @@ preload the images
     
                 </div>
         
-        <script>
-            $(function(){
-                $('#slides').slides({
-                    preload: true,
-                    preloadImage: 'img/loading.gif',
-                    play: 4000,
-                    pause: 2500,
-                    hoverPause: true,
-                    animationStart: function(current){
-                        $('.caption').animate({
-                            bottom:-35
-                        },100);
-                        if (window.console && console.log) {
-                            // example return of current slide number
-                            console.log('animationStart on slide: ', current);
-                        };
-                    },
-                    animationComplete: function(current){
-                        $('.caption').animate({
-                            bottom:0
-                        },200);
-                        if (window.console && console.log) {
-                            // example return of current slide number
-                            console.log('animationComplete on slide: ', current);
-                        };
-                    },
-                    slidesLoaded: function() {
-                        $('.caption').animate({
-                            bottom:0
-                        },200);
-                    }
-                });
-                $('#slideshowHolder').jqFancyTransitions({ 
-                    width: 179, 
-                    height: 180 
-                });
-            });
-
-
-        </script>
-
-        <script>
-            $(function() {
-                $('marquee').mouseover(function() {
-                    $(this).attr('scrollamount',0);
-                }).mouseout(function() {
-                    $(this).attr('scrollamount',3);
-                });
-
-            });
-
-
-        </script>
+ 
 
 
     </body>
