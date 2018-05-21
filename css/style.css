@@ -450,14 +450,14 @@ input[type=text] {
 #slider-right {
 	float: left;
 	height: 299px;
-	background: blue;
+	background: black;
 	width: 338px;
 	padding: 0 0 0 0;
 }
 
-#slider-right h1 {
-	font-size: 20px;
-	color: #fff;
+#slider-right h2 {
+	font-size: 24px;
+	color: mediumseagreen;
 	height: 40px;
 	line-height: 40px;
 	background: #202a2d;
